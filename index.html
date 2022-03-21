@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            font-family: sans-serif;
+        }
+
+        body{
+            background-color: #F5F5F5;
+        }
+
+        .navbar{
+            background-color: #e67e22;
+            padding: 0 20px;
+            color: #fff;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .navbar h1{
+            font-size: 35px;
+            padding: 15px;
+        }
+
+        .text-white{
+            color: #fff;
+        }
+
+        .search{
+            margin: 15px;
+            background-color: #fff;
+            border-radius: 5px;
+        }
+
+        .d-flex{
+            display: flex;
+        }
+
+        .input-search{
+            padding: 10px;
+            width: 100%;
+            outline: none;
+            border-color: transparent;
+            background-color: transparent;
+            font-size: 15px;
+            display: none;
+        }
+
+        .btn{
+            background-color: transparent;
+            border: transparent;
+            padding: 5px;
+        }
+
+        .btn-orange{
+            background-color: #e67e22;
+            padding: 0 20px;
+            border-radius: 5px;
+            margin: 3px 10px;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        .btn-custom{
+            padding: 0 20px;
+            border-radius: 5px;
+            margin: 3px 10px;
+            cursor: pointer;
+        }
+
+        .btn-shop{
+            font-size: 30px;
+        }
+
+        .group-shop{
+            display: flex;
+            align-items: center;
+        }
+
+        .h-100{
+            height: 100%;
+        }
+
+        .body{
+            margin: 20px 30px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .time-fs-group{
+            width: 100%;
+            background: #414142;
+            justify-content: center;
+            padding: 10px 5px;
+            display: none;
+        }
+
+        .active-btn-fs{
+            background-color: #e67e22;
+            display: flex;
+        }
+
+        .btn-fs{
+            margin-top: -5px;
+        }
+
+        .img-fs{
+            width: 100%;
+        }
+
+
+        @media screen and (min-width: 640px) {
+            .input-search{
+                display: block;
+            }
+
+            .search{
+                width: 100%;
+            }
+
+            .time-fs-group:nth-of-type(2){
+                display: flex;
+            }
+        }
+
+        .card-product-group{
+            margin: 30px;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .card-product-group .card{
+            max-width: 291px;
+            width: 100%;
+            padding: 10px;
+            background-color: #fff;
+        }
+
+        .wrap-card{
+            padding: 10px;
+        }
+
+        @media screen and (min-width: 1120px) {
+            .card-product-group .wrap-card{
+                max-width: 33.33%;
+            }
+        }
+
+        .card-product-group .card img{
+            width: 100%;
+        }
+
+        .card-product-group .card .name{
+            /* padding: 0 20px; */
+            padding: 10px 0;
+        }
+
+        .card-product-group .card .harga{
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .btn-beli{
+            padding: 10px 20px;
+            font-size: 18px;
+        }
+
+        .harga-asli{
+            font-size: 20px;
+            color: #E6E6E6;
+            text-decoration: line-through;
+        }
+
+        .harga-active ~ p{
+            color: white;
+        }
+
+        .harga-active{
+            color: #ED4E37;
+            font-size: 20px;
+        }
+
+        .harga-active span{
+            font-size: 25px;
+        }
+
+        .terjual{
+            margin: 10px 0;
+            background-color: #FEBDA6;
+            text-align: center;
+            font-size: 13px;
+            padding: 3px 0;
+            border-radius: 20px;
+            color: #fff;
+            position: relative;
+        }
+
+        .terjual .laku{
+            position: absolute;
+            top: 0;
+            height: 100%;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .harga .persentase{
+            background-color: #ED4E37;
+            position: absolute;
+            top: 0;
+            width: 10%;
+            height: 100%;
+            border-top-left-radius: 20px;
+            border-end-start-radius: 20px;
+        }
+
+        .justify-content-center{
+            justify-content: center;
+        }
+
+        footer{
+            background-color: #2D3448;
+            padding: 40px 30px;
+        }
+
+        /* footer a{
+
+        } */
+
+        .img-footer{
+            margin: 5px 10px;
+        }
+
+        .footer-group{
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .footer-group .footer{
+            width: 30%;
+            margin: 10px;
+        }
+
+        .footer-group .footer a{
+            color: #fff;
+            text-decoration: none;
+            display: block;
+            margin: 5px 0;
+        }
+
+        .footer-group .footer .link{
+            margin: 10px 0;
+        }
+
+        @media screen and (min-width: 1120px) {
+            .input-search{
+                display: block;
+            }
+
+            .search{
+                width: 100%;
+            }
+
+            .time-fs-group{
+                display: flex;
+            }
+        }
+
+        @media screen and (min-width: 730px) {
+            .card-product-group .wrap-card{
+                max-width: 50%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div>
+            <h1>
+                Lifai
+            </h1>
+        </div>
+        <div class="search">
+            <form action="" class="d-flex h-100">
+                <input type="text" name="" id="" class="input-search" placeholder="Dapatkan voucher">
+                <button class="btn btn-orange" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </form>
+        </div>
+        <div class="group-shop">
+            <button class="btn btn-custom text-white btn-shop"><i class="fa-solid fa-cart-shopping"></i></button>
+        </div>
+    </nav>
+
+    <section class="body">
+        <div>
+            <div>
+                <div style="margin: 0;">
+                    <img src="./flash-sale.jpeg" alt="fs" class="img-fs">
+                </div>
+                <div v class="d-flex btn-fs">
+                    <div class="time-fs-group active-btn-fs">
+                        <button class="btn text-white">
+                            <h3>12:00</h3>
+                            <p>sedang berjalan</p>
+                        </button>
+                    </div>
+                    <div class="time-fs-group">
+                        <button class="btn text-white">
+                            <h3>15:00</h3>
+                            <p>sedang berjalan</p>
+                        </button>
+                    </div>
+                    <div class="time-fs-group">
+                        <button class="btn text-white">
+                            <h3>16:00</h3>
+                            <p>sedang berjalan</p>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-product-group">
+                <div class="wrap-card">
+                    <div class="card">
+                        <img src="./download.jpg" alt="">
+                        <div>
+                            <p class="name">Headset Gaming Rexus</p>
+                            <div class="harga">
+                                <div style="width: 100%;">
+                                    <p class="harga-asli">Rp. 99.000</p>
+                                    <p class="harga-active">Rp. <span class="">70.000</span></p>
+                                    <div class="terjual">
+                                        .
+                                        <div class="persentase"></div>
+                                        <div class="laku">
+                                            <p>10 Terjual</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div style="margin-left: 20px;">
+                                    <button class="btn btn-orange btn-beli">
+                                        Beli
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="wrap-card">
+                    <div class="card">
+                        <img src="./download.jpg" alt="">
+                        <div>
+                            <p class="name">Headset Gaming Rexus</p>
+                            <div class="harga">
+                                <div style="width: 100%;">
+                                    <p class="harga-asli">Rp. 99.000</p>
+                                    <p class="harga-active">Rp. <span class="">70.000</span></p>
+                                    <div class="terjual">
+                                        .
+                                        <div class="persentase"></div>
+                                        <div class="laku">
+                                            <p>10 Terjual</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div style="margin-left: 20px;">
+                                    <button class="btn btn-orange btn-beli">
+                                        Beli
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="wrap-card">
+                    <div class="card">
+                        <img src="./download.jpg" alt="">
+                        <div>
+                            <p class="name">Headset Gaming Rexus</p>
+                            <div class="harga">
+                                <div style="width: 100%;">
+                                    <p class="harga-asli">Rp. 99.000</p>
+                                    <p class="harga-active">Rp. <span class="">70.000</span></p>
+                                    <div class="terjual">
+                                        .
+                                        <div class="persentase"></div>
+                                        <div class="laku">
+                                            <p>10 Terjual</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div style="margin-left: 20px;">
+                                    <button class="btn btn-orange btn-beli">
+                                        Beli
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="wrap-card">
+                    <div class="card">
+                        <img src="./download.jpg" alt="">
+                        <div>
+                            <p class="name">Headset Gaming Rexus</p>
+                            <div class="harga">
+                                <div style="width: 100%;">
+                                    <p class="harga-asli">Rp. 99.000</p>
+                                    <p class="harga-active">Rp. <span class="">70.000</span></p>
+                                    <div class="terjual">
+                                        .
+                                        <div class="persentase"></div>
+                                        <div class="laku">
+                                            <p>10 Terjual</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div style="margin-left: 20px;">
+                                    <button class="btn btn-orange btn-beli">
+                                        Beli
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="footer-group">
+            <div class="footer text-white">
+                <h3>About</h3>
+                <div class="link">
+                    <a href="">About us</a>
+                    <a href="">Features</a>
+                    <a href="">News</a>
+                </div>
+            </div>
+            <div class="footer text-white">
+                <h3>Support</h3>
+                <a href="">Account</a>
+                <a href="">Contact</a>
+                <a href="">Privacy</a>
+            </div>
+            <div class="footer text-white">
+                <h3>Follow Us</h3>
+                <img src="./facebook.svg" style="width: 15px" class="img-footer" alt="">
+                <img src="./telegram.svg" style="width: 30px" class="img-footer" alt="">
+                <img src="./twitter.svg" style="width: 30px" class="img-footer" alt="">
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
